@@ -3,6 +3,7 @@ package com.springAndHibernate.SpringAndHibernate.Persistence;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
 public class SpringAndHibernatePersistenceApplication {
 
