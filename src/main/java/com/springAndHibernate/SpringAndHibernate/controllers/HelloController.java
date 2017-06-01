@@ -1,5 +1,7 @@
 package com.springAndHibernate.SpringAndHibernate.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.springAndHibernate.SpringAndHibernate.model.HelloLog;
 import com.springAndHibernate.SpringAndHibernate.model.dao.HelloLogDao;
+
+import javassist.bytecode.Mnemonic;
 
 @Controller
 public class HelloController {
@@ -38,5 +42,18 @@ public class HelloController {
 	
 		return "hello";
 	}
+	
+	@RequestMapping(value="/log")
+	public String log(Model model){
+		
+		List<HelloLog> logs = helloLogDao.findAll();
+		
+		//putting data into tamplete
+		model.addAttribute("log", logs);
+			
+		return "log";
+	}
+	
+	
 	
 }
