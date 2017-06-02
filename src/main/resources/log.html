@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlsn:th="http://www.thymeleaf.org">
+<head th:replace="template :: header">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<ul>
+	<li th:each="log :${logs}">We said hello to  <span th:text+"${log.name}"></span> (somebody) at <span th:text+"${#dates.format(log.timestamp, 'dd-MM-yyyy')}></span>(some time)</li>
+	
+	
+	</ul>
+
+<div th:replace="template :: footer"></div>
+</body>
+</html>
